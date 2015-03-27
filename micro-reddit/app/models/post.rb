@@ -3,4 +3,8 @@ class Post < ActiveRecord::Base
 						 length: { maximum: 50 }
 	validates :body, presence: true, length: { maximum: 500, 
 						 too_long: "Whoa, you can't write more than %(count) characters!" }
+	validates :user_id, presence: true
+	belongs_to :user
+	#uncomment below once Comment model	is added
+	#has_many :comments
 end

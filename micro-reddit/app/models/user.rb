@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 						 length: { in: 5..35 }
 	validates :password, presence: true, uniqueness: true,
 						 length: { in: 8..30 }
+
+	has_many :posts
+	#uncomment below once Comment model is added
+	#has_many :comments, through: :posts
 end
