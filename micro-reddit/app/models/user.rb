@@ -7,6 +7,5 @@ class User < ActiveRecord::Base
 						 length: { in: 8..30 }
 
 	has_many :posts
-	#uncomment below once Comment model is added
-	#has_many :comments, through: :posts
+	has_many :comments
 end
